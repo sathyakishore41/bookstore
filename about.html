@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+.navbar{
+  display: flex;
+  background-color:#ff7200;
+  position: fixed;
+  top:0;
+  width: 100%;
+  font-size: 20px;
+}
+
+.nav-right{
+  text-align: right;
+  float:right;
+}
+
+.nav-right li {
+    display: inline;
+    float: left;
+    padding-left: 15px;
+  }
+
+  .nav-right li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color:white;
+  }
+
+  .nav-right  li ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .nav-right li a:hover {
+    background-color: rgb(31, 199, 106);
+  }
+
+  .nav-right .active {
+    background-color: #04AA6D;
+  }
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  width: 300px;
+  height: 430px;
+  margin-left: 100px;
+}
+
+.about-section {
+  padding: 70px;
+  text-align: center;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  font-size: 20px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+    
+  }
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-right">
+            <li><a href="C:\Users\Akanksha\book recommender\index.html">Home</a></li>
+            <li><a href="C:\Users\Akanksha\book recommender\products.html">Products</a></li>
+            <li><a href="C:\Users\Akanksha\book recommender\about.html">About</a></li>
+            <!-- <li><a href="C:\Users\Akanksha\book recommender\log.html">Login</a></li> -->
+            <li><a href="C:\Users\Akanksha\book recommender\regitration.html">Create Account</a></li>
+        </div>
+    </nav>
+
+<div class="about-section">
+  <h1>About Us </h1>
+  <p>Online Book Recommendation System provides easy interface to the customer.</p>
+  <p>For any query leave a comment in the Home page comment section. You can also send us email and call us 
+      on Week days. 
+      
+  </p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img src="C:\Users\Akanksha\book recommender\pictures\p1.png" alt="Jane" style="width:100% height=300px"></center>
+      <div class="container">
+        <h2>Akanksha</h2>
+        <p class="title">CEO & Founder</p>
+        <p>“Be yourself; everyone else is already taken.”</p>
+        <p>akanksha@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        <center><img src="C:\Users\Akanksha\book recommender\pictures\p2.png" alt="Jane" style="width:100% height=300px"></center>
+      <div class="container">
+        <h2>Anvitha</h2>
+        <p class="title">Art Director</p>
+        <p>“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”</p>
+        <p>anvitha@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+        <center><img src="C:\Users\Akanksha\book recommender\pictures\p2.png" alt="Jane" style="width:100% height=300px"></center>
+      <div class="container">
+        <h2>Advaitha</h2>
+        <p class="title">Designer</p>
+        <p>“A room without books is like a body without a soul.”</p>
+        <p>advaitha@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
