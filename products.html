@@ -1,689 +1,704 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
-        <link rel="stylesheet" href="C:\Users\Akanksha\book recommender\product_style.css">
-        <title>Book Zone</title>
-        <style>
-            /* CSS for the modal */
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: transparent; /* Remove black shadow background */
-            }
-            .rating {
-                font-size: 24px;
-                color: #FFD700; /* Yellow color for stars */
-            }
-            .modal-content {
-                background-color: #fefefe;
-                margin: 10% auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 50%; /* Adjust modal content size to 50% */
-            }
-        
-            .close {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-            }
-        
-            .close:hover,
-            .close:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="nav-right">
-                <li><a href="C:\Users\Akanksha\book recommender\index.html">Home</a></li>
-                <li><a href="C:\Users\Akanksha\book recommender\products.html">Products</a></li>
-                <li><a href="C:\Users\Akanksha\book recommender\about.html">About</a></li>
-                <li><a href="C:\Users\Akanksha\book recommender\log.html">Login</a></li>
-                <li><a href="C:\Users\Akanksha\book recommender\regitration.html">Create Account</a></li>
-            </div>
-        </nav>
 
-        <div class="section-body">
-            <div class="vertical-nav">
-                <ul>
-                    <h4><left>Category</left></h4>
-                    <li><a href="#Adventure">Adventure</a></li>
-                    <li><a href="#Thriller">Thriller</a></li>
-                    <li><a href="#Romantic">Romantic</a></li>
-                    <li><a href="#Comedy">Comedy</a></li>
-                </ul>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <div class="gallery-main" style="margin-left:25%;padding:1px 16px;height:1000px;">
-                <div class="Adventure" id="Adventure">
-                    <h2>Adventure</h2>
+    <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
+    <link rel="stylesheet" href="./product_style.css">
+    <title>Book Zone</title>
+    <style>
+        /* CSS for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: transparent;
+            /* Remove black shadow background */
+        }
+
+        .rating {
+            font-size: 24px;
+            color: #FFD700;
+            /* Yellow color for stars */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            /* Adjust modal content size to 50% */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-right">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a class="login-link" href="./log.html">Login</a></li>
+                <li><a class="login-link" href="./regitration.html">Create Account</a></li>
+                <li class="logout-link" style="display:none;"><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="section-body">
+        <div class="vertical-nav">
+            <ul>
+                <h4>
+                    <left>Category</left>
+                </h4>
+                <li><a href="#Adventure">Adventure</a></li>
+                <li><a href="#Thriller">Thriller</a></li>
+                <li><a href="#Romantic">Romantic</a></li>
+                <li><a href="#Comedy">Comedy</a></li>
+            </ul>
+        </div>
+
+        <div class="gallery-main" style="margin-left:25%;padding:1px 16px;height:1000px;">
+            <div class="Adventure" id="Adventure">
+                <h2>Adventure</h2>
+
+                <div class="gallery">
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./Adv1.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+
+                            <br>
+
+                            <button onclick="showBookSummary(1)">Show Summary</button> <!-- New button -->
+
+                        </div>
+                    </div>
+
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\Adv2.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(2)">Show Summary</button> <!-- New button -->
+                        </div>
+
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./Adv3.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+
+                            <br>
+                            <button onclick="showBookSummary(3)">Show Summary</button> <!-- New button -->
+
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\Adv4.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(4)">Show Summary</button> <!-- New button -->
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\Adv5.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(5)">Show Summary</button> <!-- New button -->
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\adv6.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(6)">Show Summary</button> <!-- New button -->
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\adv7.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(7)">Show Summary</button> <!-- New button -->
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#">
+                            <img src="./pictures\adv8.png" alt="img-1">
+                        </a>
+                        <div class="desc">
+                            <br>
+                            <button onclick="showBookSummary(8)">Show Summary</button> <!-- New button -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Thriller -->
+
+                <div class="Thriller" id="Thriller">
+                    <h2>Thriller</h2>
 
                     <div class="gallery">
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\Adv1.png" alt="img-1">
+                                <img src="./pictures\th1.png" alt="img-1">
                             </a>
                             <div class="desc">
-                                
                                 <br>
-
-                                <button onclick="showBookSummary(1)">Show Summary</button> <!-- New button -->
-
-                            </div>
-                        </div>  
-                      
-
-                        <div class="image-holder">
-                            <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\Adv2.png" alt="img-1">
-                            </a>
-                            <div class="desc">
-                              <br> 
-                                <button onclick="showBookSummary(2)">Show Summary</button> <!-- New button -->
-                            </div>
-                            
-                        </div>
-                       
-                        <div class="image-holder">
-                            <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\Adv3.png" alt="img-1">
-                            </a>
-                            <div class="desc">
-                                
-                                <br>
-                                <button onclick="showBookSummary(3)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(9)">Show Summary</button> <!-- New button -->
 
                             </div>
                         </div>
 
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\Adv4.png" alt="img-1">
+                                <img src="./pictures\th2.png" alt="img-1">
                             </a>
                             <div class="desc">
                                 <br>
-                                <button onclick="showBookSummary(4)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(10)">Show Summary</button> <!-- New button -->
                             </div>
                         </div>
 
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\Adv5.png" alt="img-1">
+                                <img src="./pictures\th3.png" alt="img-1">
                             </a>
                             <div class="desc">
                                 <br>
-                                <button onclick="showBookSummary(5)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(11)">Show Summary</button> <!-- New button -->
                             </div>
                         </div>
 
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\adv6.png" alt="img-1">
+                                <img src="./pictures\th4.png" alt="img-1">
                             </a>
                             <div class="desc">
                                 <br>
-                                <button onclick="showBookSummary(6)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(12)">Show Summary</button> <!-- New button -->
                             </div>
                         </div>
 
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\adv7.png" alt="img-1">
+                                <img src="./pictures\th5.png" alt="img-1">
                             </a>
                             <div class="desc">
                                 <br>
-                                <button onclick="showBookSummary(7)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(13)">Show Summary</button> <!-- New button -->
                             </div>
                         </div>
 
                         <div class="image-holder">
                             <a href="#">
-                                <img src="C:\Users\Akanksha\book recommender\pictures\adv8.png" alt="img-1">
+                                <img src="./pictures\th6.png" alt="img-1">
                             </a>
                             <div class="desc">
                                 <br>
-                                <button onclick="showBookSummary(8)">Show Summary</button> <!-- New button -->
+                                <button onclick="showBookSummary(14)">Show Summary</button> <!-- New button -->
                             </div>
                         </div>
+
+                        <div class="image-holder">
+                            <a href="#">
+                                <img src="./pictures\th7.png" alt="img-1">
+                            </a>
+                            <div class="desc">
+                                <br>
+                                <button onclick="showBookSummary(15)">Show Summary</button> <!-- New button -->
+                            </div>
+                        </div>
+
+                        <div class="image-holder">
+                            <a href="#">
+                                <img src="./images\th8.png" alt="img-1">
+                            </a>
+                            <div class="desc">
+                                <br>
+                                <button onclick="showBookSummary(16)">Show Summary</button> <!-- New button -->
+                            </div>
+                        </div>
+
 
                     </div>
 
-                    <!-- Thriller -->
+                    <!-- Romantic -->
+                    <div class="Romantic" id="Romantic">
+                        <h2>Romantic</h2>
 
-                    <div class="Thriller" id="Thriller">
-                        <h2>Thriller</h2>
-    
                         <div class="gallery">
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th1.png" alt="img-1">
+                                    <img src="./pictures\r1.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(9)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(17)">Show Summary</button> <!-- New button -->
+                                </div>
+                            </div>
 
-                                </div>
-                            </div>
-    
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th2.png" alt="img-1">
+                                    <img src="./pictures\r2.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(10)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(18)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th3.png" alt="img-1">
+                                    <img src="./pictures\r3.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(11)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(19)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th4.png" alt="img-1">
+                                    <img src="./pictures\r4.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(12)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(20)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th5.png" alt="img-1">
+                                    <img src="./pictures\r5.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(13)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(21)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th6.png" alt="img-1">
+                                    <img src="./pictures\r6.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(14)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(22)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\pictures\th7.png" alt="img-1">
+                                    <img src="./pictures\r7.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(15)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(23)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
+
                             <div class="image-holder">
                                 <a href="#">
-                                    <img src="C:\Users\Akanksha\book recommender\images\th8.png" alt="img-1">
+                                    <img src="./pictures\r8.png" alt="img-1">
                                 </a>
                                 <div class="desc">
                                     <br>
-                                    <button onclick="showBookSummary(16)">Show Summary</button> <!-- New button -->
+                                    <button onclick="showBookSummary(24)">Show Summary</button> <!-- New button -->
                                 </div>
                             </div>
-    
-    
+
+
                         </div>
 
-                        <!-- Romantic -->
-                        <div class="Romantic" id="Romantic">
-                            <h2>Romantic</h2>
-        
+                        <!-- Comedy -->
+                        <div class="Comedy" id="Comedy">
+                            <h2>Comedy</h2>
+
                             <div class="gallery">
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r1.png" alt="img-1">
+                                        <img src="./pictures\c1.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(17)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(25)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r2.png" alt="img-1">
+                                        <img src="./pictures\c2.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(18)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(26)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r3.png" alt="img-1">
+                                        <img src="./pictures\c3.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(19)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(27)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r4.png" alt="img-1">
+                                        <img src="./pictures\c4.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(20)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(28)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r5.png" alt="img-1">
+                                        <img src="./pictures\c5.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(21)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(29)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r6.png" alt="img-1">
+                                        <img src="./pictures\c6.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(22)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(30)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r7.png" alt="img-1">
+                                        <img src="./pictures\c7.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(23)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(31)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
+
                                 <div class="image-holder">
                                     <a href="#">
-                                        <img src="C:\Users\Akanksha\book recommender\pictures\r8.png" alt="img-1">
+                                        <img src="./pictures\c8.png" alt="img-1">
                                     </a>
                                     <div class="desc">
                                         <br>
-                                        <button onclick="showBookSummary(24)">Show Summary</button> <!-- New button -->
+                                        <button onclick="showBookSummary(32)">Show Summary</button> <!-- New button -->
                                     </div>
                                 </div>
-        
-        
+
+
                             </div>
 
-                            <!-- Comedy -->
-                            <div class="Comedy" id="Comedy">
-                                <h2>Comedy</h2>
-            
-                                <div class="gallery">
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c1.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(25)">Show Summary</button> <!-- New button -->
-                                        </div>
+
+                            <!-- Modal for book summary -->
+                            <div id="summaryModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <h2 id="summaryTitle">Adventure Book Summary</h2>
+                                    <p id="summaryContent">This is the summary of the book.</p>
+                                    <div>
+                                        <h3 id="reviewer1"></h3>
+                                        <p id="review1Content"></p>
+                                        <h3 id="rating1">Rating:</h3>
+                                        <div class="rating" id="rating1Stars"></div>
+
+                                        <h3 id="reviewer2"></h3>
+                                        <p id="review2Content"></p>
+                                        <h3 id="rating2">Rating:</h3>
+                                        <div class="rating" id="rating2Stars"></div>
+
+                                        <h3 id="reviewer3"></h3>
+                                        <p id="review3Content"></p>
+                                        <h3 id="rating3">Rating:</h3>
+                                        <div class="rating" id="rating3Stars"></div>
                                     </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c2.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(26)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c3.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(27)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c4.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(28)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c5.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(29)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c6.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(30)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c7.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(31)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-                                    <div class="image-holder">
-                                        <a href="#">
-                                            <img src="C:\Users\Akanksha\book recommender\pictures\c8.png" alt="img-1">
-                                        </a>
-                                        <div class="desc">
-                                            <br>
-                                            <button onclick="showBookSummary(32)">Show Summary</button> <!-- New button -->
-                                        </div>
-                                    </div>
-            
-            
                                 </div>
-        
-                                
-                  <!-- Modal for book summary -->
-                  <div id="summaryModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <h2 id="summaryTitle">Adventure Book Summary</h2>
-                        <p id="summaryContent">This is the summary of the book.</p>
-                        <div>
-                            <h3 id="reviewer1"></h3>
-                            <p id="review1Content"></p>
-                            <h3 id="rating1">Rating:</h3>
-                            <div class="rating" id="rating1Stars"></div>
-
-                            <h3 id="reviewer2"></h3>
-                            <p id="review2Content"></p>
-                            <h3 id="rating2">Rating:</h3>
-                            <div class="rating" id="rating2Stars"></div>
-
-                            <h3 id="reviewer3"></h3>
-                            <p id="review3Content"></p>
-                            <h3 id="rating3">Rating:</h3>
-                            <div class="rating" id="rating3Stars"></div>
+                            </div>
                         </div>
                     </div>
-                </div>         
+
+
+
+                    <br>
+
+                    <right> <a href="./index.html" class="btn">Back <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a></right>
+
+
                 </div>
-            </div>
-           
+
+                <script>
+                    // Function to show book summary in modal dialog
+                    function showBookSummary(bookNumber) {
+                        // Get the modal
+                        var modal = document.getElementById("summaryModal");
+
+                        // Display the modal
+                        modal.style.display = "block";
+
+                        // Set different content based on the bookNumber
+                        if (bookNumber === 1) {
+                            document.getElementById("summaryTitle").innerText = "TREASURE ISLAND";
+                            document.getElementById("summaryContent").innerText = "Treausre island Summary.";
+                            document.getElementById("reviewer1").innerText = "sathya :";
+                            document.getElementById("review1Content").innerText = "This book was amazing! I couldn't put it down. The characters were engaging and the plot was thrilling.";
+                            document.getElementById("rating1Stars").innerHTML = "★★★☆☆"; // 3-star rating
+                        } else if (bookNumber === 2) {
+                            document.getElementById("summaryTitle").innerText = "THE MAGIC OF THE UNICORN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 2.";
+                            document.getElementById("reviewer2").innerText = "siri :";
+                            document.getElementById("review2Content").innerText = "I enjoyed this book a lot. The storyline was captivating and kept me guessing until the end.";
+                            document.getElementById("rating2Stars").innerHTML = "★★★★☆"; // 4-star rating
+                        } else if (bookNumber === 3) {
+                            document.getElementById("summaryTitle").innerText = "SUMMER ADVENTURE STORIES";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 3.";
+                            document.getElementById("reviewer3").innerText = "charan:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 4) {
+                            document.getElementById("summaryTitle").innerText = "DRAGON RUN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+
+                        } else if (bookNumber === 5) {
+                            document.getElementById("summaryTitle").innerText = "THE ABOMINABLE SNOWMAN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 5.";
+                            document.getElementById("reviewer2").innerText = "siri :";
+                            document.getElementById("review2Content").innerText = "I enjoyed this book a lot. The storyline was captivating and kept me guessing until the end.";
+                            document.getElementById("rating2Stars").innerHTML = "★★★★☆"; // 4-star rating
+                        } else if (bookNumber === 6) {
+                            document.getElementById("summaryTitle").innerText = "The chronicles of NARNIA";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 6.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★★☆☆"; // 3-star rating
+                        } else if (bookNumber === 7) {
+                            document.getElementById("summaryTitle").innerText = "Rise-Fall MOUNT MAJESTIC";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 7.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+
+                        } else if (bookNumber === 8) {
+                            document.getElementById("summaryTitle").innerText = "MAGICAL Underwater ACTIVITY BOOK";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 8.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 9) {
+                            document.getElementById("summaryTitle").innerText = "DARKEST BEFORE THE DAWN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 9.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 10) {
+                            document.getElementById("summaryTitle").innerText = "SANDIE WILL The Takings";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 11) {
+                            document.getElementById("summaryTitle").innerText = "DEATH SENTENCE AN ABSOLUTELY GRIPPING CRIME THRILLER";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 12) {
+                            document.getElementById("summaryTitle").innerText = "THE BILLION DOLLAR SPY";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 13) {
+                            document.getElementById("summaryTitle").innerText = "The Dividing Line (SHERRY BRISCOE)";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 14) {
+                            document.getElementById("summaryTitle").innerText = "(JOE HILL) STRANGE WEATHER";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 15) {
+                            document.getElementById("summaryTitle").innerText = "SOMETHING EVIL IS WATCHING YOU MIRROR";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 16) {
+                            document.getElementById("summaryTitle").innerText = "MALIGNANT";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was very nyc,its was thrilling when i was reading the book.";
+                            document.getElementById("rating3Stars").innerHTML = "★★★★★"; // 5-star rating
+                        } else if (bookNumber === 17) {
+                            document.getElementById("summaryTitle").innerText = "A PRINCE ON PAPER(RELUCTANT ROYALS)";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 18) {
+                            document.getElementById("summaryTitle").innerText = "THE ROGUE OF Fifth Avenue";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating  
+                        } else if (bookNumber === 19) {
+                            document.getElementById("summaryTitle").innerText = "Marrying Winterborne";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 20) {
+                            document.getElementById("summaryTitle").innerText = "THE LADY TRAVELERS GUIDE TO Scoundrels & Other Gentlemen";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 21) {
+                            document.getElementById("summaryTitle").innerText = "ROSEVEAN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 22) {
+                            document.getElementById("summaryTitle").innerText = "A COLLECTOR'S ITEM";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 23) {
+                            document.getElementById("summaryTitle").innerText = "Highlander SERIES1";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 24) {
+                            document.getElementById("summaryTitle").innerText = "A CHALLENGE Of LOVE and FAITH";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 25) {
+                            document.getElementById("summaryTitle").innerText = "AASIF MANDVI NO LAND'S MAN";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 26) {
+                            document.getElementById("summaryTitle").innerText = "THREE MEN IN A BOAT";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 27) {
+                            document.getElementById("summaryTitle").innerText = "LOSE WELL (CHRIS GETHARD)";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 28) {
+                            document.getElementById("summaryTitle").innerText = "WODEHOUSE";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 29) {
+                            document.getElementById("summaryTitle").innerText = "I MUST SAY MY LIFE AS A HUMBLE COMEDY LEGEND";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 30) {
+                            document.getElementById("summaryTitle").innerText = "Baggage Christopher Kell";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 31) {
+                            document.getElementById("summaryTitle").innerText = "DANGEROUSLY FUNNY";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        } else if (bookNumber === 32) {
+                            document.getElementById("summaryTitle").innerText = "THE BOLDS by Julian Clary";
+                            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
+                            document.getElementById("reviewer3").innerText = "Reviewer 3:";
+                            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
+                            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
+                        }
+                    }
 
 
-            <br>
+                    // Function to close the modal
+                    function closeModal() {
+                        // Get the modal
+                        var modal = document.getElementById("summaryModal");
 
-            <right> <a href="C:\Users\Akanksha\book recommender\index.html" class="btn">Back <i class="fa fa-arrow-right" aria-hidden="true"></i> </a></right>
-              
+                        // Hide the modal
+                        modal.style.display = "none";
+                    }
+                </script>
 
-        </div>
-
-<script>
-    // Function to show book summary in modal dialog
-    function showBookSummary(bookNumber) {
-        // Get the modal
-        var modal = document.getElementById("summaryModal");
-    
-        // Display the modal
-        modal.style.display = "block";
-    
-        // Set different content based on the bookNumber
-        if (bookNumber === 1) {
-            document.getElementById("summaryTitle").innerText = "TREASURE ISLAND";
-            document.getElementById("summaryContent").innerText = "Treausre island Summary.";
-            document.getElementById("reviewer1").innerText = "sathya :";
-            document.getElementById("review1Content").innerText = "This book was amazing! I couldn't put it down. The characters were engaging and the plot was thrilling.";
-            document.getElementById("rating1Stars").innerHTML = "★★★☆☆"; // 3-star rating
-        } else if (bookNumber === 2) {
-            document.getElementById("summaryTitle").innerText = "THE MAGIC OF THE UNICORN";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 2.";
-            document.getElementById("reviewer2").innerText = "siri :";
-            document.getElementById("review2Content").innerText = "I enjoyed this book a lot. The storyline was captivating and kept me guessing until the end.";
-            document.getElementById("rating2Stars").innerHTML = "★★★★☆"; // 4-star rating
-        } else if (bookNumber === 3) {
-            document.getElementById("summaryTitle").innerText = "SUMMER ADVENTURE STORIES";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 3.";
-            document.getElementById("reviewer3").innerText = "charan:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        } else if (bookNumber ===4) {
-            document.getElementById("summaryTitle").innerText = "DRAGON RUN";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        
-        } else if (bookNumber === 5) {
-            document.getElementById("summaryTitle").innerText = "THE ABOMINABLE SNOWMAN";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 5.";
-            document.getElementById("reviewer2").innerText = "siri :";
-            document.getElementById("review2Content").innerText = "I enjoyed this book a lot. The storyline was captivating and kept me guessing until the end.";
-            document.getElementById("rating2Stars").innerHTML = "★★★★☆"; // 4-star rating
-        } else if (bookNumber === 6) {
-            document.getElementById("summaryTitle").innerText = "The chronicles of NARNIA";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 6.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★★☆☆"; // 3-star rating
-        } else if (bookNumber ===7) {
-            document.getElementById("summaryTitle").innerText = "Rise-Fall MOUNT MAJESTIC";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 7.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        
-        } else if (bookNumber ===8) {
-            document.getElementById("summaryTitle").innerText = "MAGICAL Underwater ACTIVITY BOOK";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 8.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        } else if (bookNumber ===9) {
-            document.getElementById("summaryTitle").innerText = "DARKEST BEFORE THE DAWN";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 9.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        } else if (bookNumber ===10) {
-            document.getElementById("summaryTitle").innerText = "SANDIE WILL The Takings";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===11) {
-            document.getElementById("summaryTitle").innerText = "DEATH SENTENCE AN ABSOLUTELY GRIPPING CRIME THRILLER";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===12) {
-           document.getElementById("summaryTitle").innerText = "THE BILLION DOLLAR SPY";
-           document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-           document.getElementById("reviewer3").innerText = "Reviewer 3:";
-           document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-           document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===13) {
-          document.getElementById("summaryTitle").innerText = "The Dividing Line (SHERRY BRISCOE)";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===14) {
-          document.getElementById("summaryTitle").innerText = "(JOE HILL) STRANGE WEATHER";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===15) {
-          document.getElementById("summaryTitle").innerText = "SOMETHING EVIL IS WATCHING YOU MIRROR";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===16) {
-            document.getElementById("summaryTitle").innerText = "MALIGNANT";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was very nyc,its was thrilling when i was reading the book.";
-            document.getElementById("rating3Stars").innerHTML = "★★★★★"; // 5-star rating
-        }else if (bookNumber ===17) {
-          document.getElementById("summaryTitle").innerText = "A PRINCE ON PAPER(RELUCTANT ROYALS)";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===18) {
-          document.getElementById("summaryTitle").innerText = "THE ROGUE OF Fifth Avenue";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating  
-        }else if (bookNumber ===19) {
-          document.getElementById("summaryTitle").innerText = "Marrying Winterborne";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===20) {
-          document.getElementById("summaryTitle").innerText = "THE LADY TRAVELERS GUIDE TO Scoundrels & Other Gentlemen";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===21) {
-          document.getElementById("summaryTitle").innerText = "ROSEVEAN";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===22) {
-          document.getElementById("summaryTitle").innerText = "A COLLECTOR'S ITEM";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===23) {
-          document.getElementById("summaryTitle").innerText = "Highlander SERIES1";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===24) {
-          document.getElementById("summaryTitle").innerText = "A CHALLENGE Of LOVE and FAITH";
-          document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-          document.getElementById("reviewer3").innerText = "Reviewer 3:";
-          document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-          document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===25) {
-            document.getElementById("summaryTitle").innerText = "AASIF MANDVI NO LAND'S MAN";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===26) {
-            document.getElementById("summaryTitle").innerText = "THREE MEN IN A BOAT";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===27) {
-            document.getElementById("summaryTitle").innerText = "LOSE WELL (CHRIS GETHARD)";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===28) {
-            document.getElementById("summaryTitle").innerText = "WODEHOUSE";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===29) {
-            document.getElementById("summaryTitle").innerText = "I MUST SAY MY LIFE AS A HUMBLE COMEDY LEGEND";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===30) {
-            document.getElementById("summaryTitle").innerText = "Baggage Christopher Kell";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===31) {
-            document.getElementById("summaryTitle").innerText = "DANGEROUSLY FUNNY";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-        }else if (bookNumber ===32) {
-            document.getElementById("summaryTitle").innerText = "THE BOLDS by Julian Clary";
-            document.getElementById("summaryContent").innerText = "This is the summary of Adventure Book 4.";
-            document.getElementById("reviewer3").innerText = "Reviewer 3:";
-            document.getElementById("review3Content").innerText = "This book was okay, but it didn't fully hold my attention. The plot felt predictable.";
-            document.getElementById("rating3Stars").innerHTML = "★★☆☆☆"; // 2-star rating
-       }
-    }
-
-    
-    // Function to close the modal
-    function closeModal() {
-        // Get the modal
-        var modal = document.getElementById("summaryModal");
-    
-        // Hide the modal
-        modal.style.display = "none";
-    }
-    </script>
-    </body>
+                <script src="./auth.js"></script>
+</body>
 
 </html>
