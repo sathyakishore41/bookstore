@@ -58,11 +58,14 @@
 <body>
     <nav class="navbar">
         <div class="nav-right">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./products.html">Products</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./log.html">Login</a></li>
-            <li><a href="./regitration.html">Create Account</a></li>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a class="login-link" href="./log.html">Login</a></li>
+                <li><a class="login-link" href="./regitration.html">Create Account</a></li>
+                <li class="logout-link" style="display:none;"><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -694,6 +697,8 @@
                         modal.style.display = "none";
                     }
                 </script>
+
+                <script src="./auth.js"></script>
 </body>
 
 </html>
